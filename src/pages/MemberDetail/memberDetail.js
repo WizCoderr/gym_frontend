@@ -32,7 +32,7 @@ const MemberDetail = () => {
 
   const fetchMembership = async () => {
     axios
-      .get("http://localhost:4000/plans/get-membership", {
+      .get("https://gym-backend-3jbg.onrender.com/plans/get-membership", {
         withCredentials: true,
       })
       .then((response) => {
@@ -47,7 +47,7 @@ const MemberDetail = () => {
 
   const fetchData = async () => {
     await axios
-      .get(`http://localhost:4000/members/get-member/${id}`, {
+      .get(`https://gym-backend-3jbg.onrender.com/members/get-member/${id}`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -66,7 +66,7 @@ const MemberDetail = () => {
     let statuss = status === "Active" ? "Pending" : "Active";
     await axios
       .post(
-        `http://localhost:4000/members/change-status/${id}`,
+        `https://gym-backend-3jbg.onrender.com/members/change-status/${id}`,
         { status: statuss },
         { withCredentials: true }
       )
@@ -111,7 +111,7 @@ const MemberDetail = () => {
 
       // Create payment session
       const response = await axios.post(
-        "http://localhost:4000/payment/create-session",
+        "https://gym-backend-3jbg.onrender.com/payment/create-session",
         {
           amount: selectedMembership.price,
           type: "renewal",

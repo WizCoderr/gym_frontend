@@ -24,7 +24,7 @@ const ForgotPassword = () => {
     }
     const changePassword = async()=>{
         setLoader(true)
-        await axios.post('http://localhost:4000/auth/reset-password',{email:inputField.email,newPassword:inputField.newPassword}).then((response)=>{
+        await axios.post('https://gym-backend-3jbg.onrender.com/auth/reset-password',{email:inputField.email,newPassword:inputField.newPassword}).then((response)=>{
          toast.success(response.data.message);
          setLoader(false)
         }).catch(err=>{
@@ -37,7 +37,7 @@ const ForgotPassword = () => {
     }
     const verifyOTP = async()=>{
         setLoader(true);
-        await axios.post('http://localhost:4000/auth/reset-password/checkOtp',{email:inputField.email,otp:inputField.otp}).then((response)=>{
+        await axios.post('https://gym-backend-3jbg.onrender.com/auth/reset-password/checkOtp',{email:inputField.email,otp:inputField.otp}).then((response)=>{
            setOtpValidate(true)
          setContentValue("Submit Your New Password")
          toast.success(response.data.message);
@@ -51,7 +51,7 @@ const ForgotPassword = () => {
     }
     const sendOtp = async()=>{
         setLoader(true);
-        await axios.post('http://localhost:4000/auth/reset-password/sendOtp',{email:inputField.email}).then((response)=>{
+        await axios.post('https://gym-backend-3jbg.onrender.com/auth/reset-password/sendOtp',{email:inputField.email}).then((response)=>{
               setEmailSubmit(true)
              setContentValue("Submit Your OTP")
              toast.success(response.data.message);

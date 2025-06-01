@@ -14,7 +14,7 @@ const BatchMember = () => {
         const fetchBatchMembers = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:4000/batches/${id}/members`,
+                    `https://gym-backend-3jbg.onrender.com/batches/${id}/members`,
                     { withCredentials: true }
                 );
                 setMembers(response.data.members);

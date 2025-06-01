@@ -36,7 +36,7 @@ const Batch = () =>{
 
     const fetchData=async(skip,limits)=>{
           
-        await axios.get(`http://localhost:4000/batches/get-batches?skip=${skip}&limit=${limits}`,{withCredentials:true}).then((response)=>{
+        await axios.get(`https://gym-backend-3jbg.onrender.com/batches/get-batches?skip=${skip}&limit=${limits}`,{withCredentials:true}).then((response)=>{
             console.log(response.data.batches)
             let totalData = response.data.totalBatches;
             setTotalData(totalData);
@@ -98,7 +98,7 @@ const Batch = () =>{
     const handleSearchData = async()=>{
         if(search!==""){
             setIsSearchModeOn(true);
-            await axios.get(`http://localhost:4000/batches/searched-batches?searchTerm=${search}`,{withCredentials:true}).then((response)=>{
+            await axios.get(`https://gym-backend-3jbg.onrender.com/batches/searched-batches?searchTerm=${search}`,{withCredentials:true}).then((response)=>{
                 console.log(response.data.batches)
                 setData(response.data.totalBatches)
                 setTotalData(response.data.totalBatches)

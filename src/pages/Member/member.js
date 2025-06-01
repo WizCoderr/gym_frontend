@@ -37,7 +37,7 @@ const Member = () =>{
 
     const fetchData=async(skip,limits)=>{
           
-        await axios.get(`http://localhost:4000/members/all-member?skip=${skip}&limit=${limits}`,{withCredentials:true}).then((response)=>{
+        await axios.get(`https://gym-backend-3jbg.onrender.com/members/all-member?skip=${skip}&limit=${limits}`,{withCredentials:true}).then((response)=>{
             console.log(response)
             let totalData = response.data.totalMembers;
             setTotalData(totalData);
@@ -109,7 +109,7 @@ const Member = () =>{
     const handleSearchData = async()=>{
         if(search!==""){
             setIsSearchModeOn(true);
-            await axios.get(`http://localhost:4000/members/searched-members?searchTerm=${search}`,{withCredentials:true}).then((response)=>{
+            await axios.get(`https://gym-backend-3jbg.onrender.com/members/searched-members?searchTerm=${search}`,{withCredentials:true}).then((response)=>{
                 console.log(response)
                 setData(response.data.members)
                 setTotalData(response.data.totalMembers)

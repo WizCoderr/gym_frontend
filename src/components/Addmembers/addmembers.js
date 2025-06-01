@@ -45,7 +45,7 @@ const Addmembers = () => {
 
     const fetchMembership = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/plans/get-membership', { withCredentials: true });
+            const response = await axios.get('https://gym-backend-3jbg.onrender.com/plans/get-membership', { withCredentials: true });
             const memberships = response.data.membership;
             if (memberships.length === 0) {
                 return toast.error("No membership plans available");
@@ -88,7 +88,7 @@ const Addmembers = () => {
         }));
 
         try {
-            const response = await axios.post('http://localhost:4000/payment/create-session', {
+            const response = await axios.post('https://gym-backend-3jbg.onrender.com/payment/create-session', {
                 amount: selectedMembership.price,
                 type: 'membership',
                 description: `${selectedMembership.months} Months Gym Membership`,

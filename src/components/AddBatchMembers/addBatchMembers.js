@@ -52,7 +52,7 @@ const AddBatchMembers = () => {
 
   const fetchBatches = async () => {
     await axios
-      .get("http://localhost:4000/batches/get-batches", {
+      .get("https://gym-backend-3jbg.onrender.com/batches/get-batches", {
         withCredentials: true,
       })
       .then((response) => {
@@ -123,7 +123,7 @@ const AddBatchMembers = () => {
 
       // Create payment session
       const response = await axios.post(
-        "http://localhost:4000/payment/create-session",
+        "https://gym-backend-3jbg.onrender.com/payment/create-session",
         {
           amount: batch.price,
           type: "batch_membership",

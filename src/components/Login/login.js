@@ -13,7 +13,7 @@ const Login = () => {
         // navigate('/dashboard');
    
 
-        await axios.post("http://localhost:4000/auth/login",loginField,{withCredentials:true}).then((response)=>{
+        await axios.post("https://gym-backend-3jbg.onrender.com/auth/login",loginField,{withCredentials:true}).then((response)=>{
               console.log(response.data);
               localStorage.setItem('gymName',response.data.gym.gymName);
               localStorage.setItem('gymPic',response.data.gym.profilePic);

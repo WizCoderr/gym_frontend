@@ -21,7 +21,7 @@ const AddBatch = ({ handleClose }) => {
 
   const fetchBatches = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/batches/get-batches", {
+      const res = await axios.get("https://gym-backend-3jbg.onrender.com/batches/get-batches", {
         withCredentials: true
       });
       setBatches(res.data.batches);
@@ -48,7 +48,7 @@ const AddBatch = ({ handleClose }) => {
       };
 
       const response = await axios.post(
-        "http://localhost:4000/batches/create-batch",
+        "https://gym-backend-3jbg.onrender.com/batches/create-batch",
         requestPayload,
         {
           withCredentials: true

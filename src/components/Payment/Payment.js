@@ -25,7 +25,7 @@ const Payment = () => {
                 const stripe = await stripePromise;
                 
                 const response = await axios.post(
-                    'http://localhost:4000/payment/create-session',
+                    'https://gym-backend-3jbg.onrender.com/payment/create-session',
                     {
                         memberData,
                         amount,

@@ -21,7 +21,7 @@ const PaymentSuccess = () => {
                 if (pendingMember) {
                     // Handle new member registration
                     await axios.post(
-                        'http://localhost:4000/members/register-member',
+                        'https://gym-backend-3jbg.onrender.com/members/register-member',
                         pendingMember,
                         { withCredentials: true }
                     );
@@ -32,7 +32,7 @@ const PaymentSuccess = () => {
                 else if (pendingBatchMember) {
                     // Handle batch member registration
                     await axios.post(
-                        'http://localhost:4000/batches/add-members-to-batch',
+                        'https://gym-backend-3jbg.onrender.com/batches/add-members-to-batch',
                         pendingBatchMember,
                         { withCredentials: true }
                     );
@@ -43,7 +43,7 @@ const PaymentSuccess = () => {
                 else if (pendingRenewal) {
                     // Handle membership renewal
                     await axios.put(
-                        `http://localhost:4000/members/update-member-plan/${pendingRenewal.memberId}`,
+                        `https://gym-backend-3jbg.onrender.com/members/update-member-plan/${pendingRenewal.memberId}`,
                         { membership: pendingRenewal.membershipId },
                         { withCredentials: true }
                     );
